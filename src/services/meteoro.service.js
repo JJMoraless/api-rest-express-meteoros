@@ -22,8 +22,8 @@ const getNearMeteors = async ({ today, nexday }) => {
   };
   const { data } = await meteorsApi.get("/", { params });
   const { near_earth_objects } = data;
-  const [date] = Object.keys(near_earth_objects);
-  const dayData = near_earth_objects[date];
+  const [day] = Object.keys(near_earth_objects);
+  const dayData = near_earth_objects[day];
   console.log(dayData[0].close_approach_data);
 
 
