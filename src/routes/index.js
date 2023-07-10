@@ -26,8 +26,8 @@ filesNames.forEach(async (fileName) => {
   const cleanName = cleanFile(fileName);
   if (cleanName === "index") return;
   const moduleRouter = await import(`./${fileName}`);
-  console.log(moduleRouter.router);
   router.use(`/${cleanName}`, moduleRouter.router);
+  console.log(cleanName);
 });
 
 export { router };
